@@ -8,7 +8,7 @@ module DaemonKit
     end
 
     def exists?
-      File.exists?( @path )
+      File.exist?( @path )
     end
 
     # Returns true if the process is running

@@ -23,7 +23,7 @@ module DaemonKit
     end
 
     def vendor_kit?
-      File.exists?( "#{DAEMON_ROOT}/vendor/daemon-kit" )
+      File.exist?( "#{DAEMON_ROOT}/vendor/daemon-kit" )
     end
   end
 

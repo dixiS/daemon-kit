@@ -202,7 +202,7 @@ module DaemonKit
     end
 
     def include_core_lib
-      if File.exists?( core_lib = File.join( DAEMON_ROOT, 'lib', configuration.daemon_name + '.rb' ) )
+      if File.exist?( core_lib = File.join( DAEMON_ROOT, 'lib', configuration.daemon_name + '.rb' ) )
         require core_lib
       end
     end

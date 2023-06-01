@@ -127,7 +127,7 @@ module DaemonKit
         opts.separator "Options can be:"
 
         arg_file = File.join( DaemonKit.root, 'config', 'arguments.rb' )
-        eval(IO.read(arg_file), binding, arg_file) if File.exists?( arg_file )
+        eval(IO.read(arg_file), binding, arg_file) if File.exist?( arg_file )
 
         opts.on("-e", "--env", "--environment ENV", "Environment for the process", "  Default: development") do
           # Nothing, just here for show

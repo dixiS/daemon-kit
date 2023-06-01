@@ -4,7 +4,7 @@ namespace :god do
   desc "Generate a stub god config file template for the daemon"
   task :template => 'environment' do
     # Preserve local changes
-    if File.exists?( "#{DaemonKit.root}/config/god.erb" ) && ENV['FORCE'].nil?
+    if File.exist?( "#{DaemonKit.root}/config/god.erb" ) && ENV['FORCE'].nil?
       puts "Template already exists, use FORCE=1 to overwrite."
       exit 1
     end
@@ -15,7 +15,7 @@ namespace :god do
   desc "Parse the god config template into a god config file"
   task :generate => 'environment' do
 
-    unless File.exists?( "#{DaemonKit.root}/config/god.erb" )
+    unless File.exist?( "#{DaemonKit.root}/config/god.erb" )
       Rake::Task["god:template"].invoke
     end
 

@@ -28,7 +28,7 @@ module DaemonKit
 
         path = File.join( DAEMON_ROOT, 'config', config )
 
-        raise ArgumentError, "Can't find #{path}" unless File.exists?( path )
+        raise ArgumentError, "Can't find #{path}" unless File.exist?( path )
 
         config_content = ERB.new(File.read(path)).result(binding)
 
