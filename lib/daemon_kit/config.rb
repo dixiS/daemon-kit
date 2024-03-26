@@ -32,7 +32,7 @@ module DaemonKit
 
         config_content = ERB.new(File.read(path)).result(binding)
 
-        new( YAML.load( config_content ) )
+        new( YAML.load( config_content, aliases: true ) )
       end
 
       # Return the +config+.yml file as a raw hash.
